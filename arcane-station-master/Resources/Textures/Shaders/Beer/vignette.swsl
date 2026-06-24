@@ -1,0 +1,11 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float Intensity;
+
+void fragment() {
+    highp vec4 col = zTextureSpec(SCREEN_TEXTURE, UV);
+    highp vec2 centered = UV - vec2(0.5, 0.5);
+    highp float r2 = dot(centered, centered);
+    highp float vig = clamp(1.0 - r2 * 4.0 * Intensity, 0.0, 1.0);
+    highp float dark = mix(1.0, 0.45, Intensity);
+    COLOR = vec4(col.rgb * vig * dark, col.a);
+}

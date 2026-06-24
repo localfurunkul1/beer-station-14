@@ -1,0 +1,34 @@
+<!--
+SPDX-FileCopyrightText: 2024 ScyronX <166930367+ScyronX@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Они
+
+  <Box>
+    <GuideEntityEmbed Entity="MobOni" Caption=""/>
+  </Box>
+
+  Крупные люди с рогами, встречающиеся в разных цветах. Их точность с огнестрельным оружием ужасна, но их физическая сила приносит множество преимуществ как в бою, так и вне.
+
+  ## Диета
+  - Практически всё, что угодно. Многие продукты можно есть даже сырыми.
+
+  ## Преимущества
+  - Получают на [color=#1e90ff]15% меньше тупого, колющего и режущего[/color] урона.
+  - Наносят на 25% больше тупого, режущего, колющего, стамины, и структурного урона в ближнем бою.
+  - Из-за своих размеров могут с лёгкостью переносить и тащить.
+
+  ## Недостатки
+  - Они не способны вести точный огонь из любого оружия.
+  - Их тяжелее переносить и тащить.
+  - Они крупнее людей, поэтому в них легче попасть.
+
+</Document>

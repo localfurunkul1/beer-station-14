@@ -1,0 +1,43 @@
+# Spoken by Shadowkins.
+- type: language
+  id: Marish
+  isVisibleLanguage: true
+  speech:
+    color: "#be3cc5"
+    # fontId: Lymphatic #* FONTS NOT ALREADY HERE ARE NOT BEING ADDED
+    empathySpeech: false
+    speechVerbOverrides:
+    - chat-speech-verb-marish
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: what # TODO: Sprite it
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 5
+    replacement:
+    - mar
+    - mwrrr
+    - maaAr
+    - aarrr
+    - wrurrl
+    - mmar
+    - mwar
+    - mlar
+    - mlwar
+    - mwaarr
+    - mAaAr
+    - lmwar
+    - wlurrl
+    - wlmwar
+    - arrmaw
+    - mwAlwar
+    - wrlurll
+    - wlarrul
+    - wlAmur
+    - AlwuRm
+    - mrrrAw
+    - wurlMur
+    - uuRlmmr

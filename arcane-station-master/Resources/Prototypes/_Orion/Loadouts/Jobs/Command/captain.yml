@@ -1,0 +1,118 @@
+# Requirements
+- type: loadoutEffectGroup
+  id: GrandLightNTR
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNanotrasenRepresentative
+      time: 18000 # 5 hrs
+
+# Jumpsuit
+- type: loadout
+  id: CaptainWhiteJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitWhiteCaptain
+
+- type: loadout
+  id: CaptainWhiteJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtWhiteCaptain
+
+- type: loadout
+  id: CaptainCommandJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCommandCaptain
+
+- type: loadout
+  id: SheriffJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSheriff
+
+- type: loadout
+  id: CaptainWhiteTurtleneck
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitWhiteCaptainTurtleneck
+
+# Head
+- type: loadout
+  id: CaptainWhiteBeret
+  equipment:
+    head: ClothingHeadHatBeretCaptainWhite
+
+- type: loadout
+  id: SheriffBeret
+  equipment:
+    head: ClothingHeadHatBeretSheriff
+
+- type: loadout
+  id: CaptainWhiteCap
+  equipment:
+    head: ClothingHeadHatCapcapWhite
+
+- type: loadout
+  id: SheriffCap
+  equipment:
+    head: ClothingHeadHatCapcapSheriff
+
+# Gloves
+- type: loadout
+  id: CaptainWhiteGloves
+  equipment:
+    gloves: ClothingHandsGlovesCaptainWhite
+
+- type: loadout
+  id: CaptainWhiteHeavyGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: GrandLightNTR
+  equipment:
+    gloves: ClothingHandsGlovesHeavyGoldenTrim
+
+- type: loadout
+  id: SheriffGloves
+  equipment:
+    gloves: ClothingHandsGlovesSheriff
+
+# Neck
+- type: loadout
+  id: CaptainWideCloak
+  equipment:
+    neck: ClothingNeckCaptainWide
+
+- type: loadout
+  id: CaptainRoyalCloak
+  equipment:
+    neck: ClothingNeckCloakRoyalCaptain
+
+- type: loadout
+  id: CaptainWhiteMantle
+  equipment:
+    neck: ClothingNeckWhiteMantleCaptain
+
+- type: loadout
+  id: CaptainWhiteShoulderMantle
+  equipment:
+    neck: ClothingNeckMantleCaptainWhiteShoulder
+
+# Back
+- type: loadout
+  id: CaptainDuffelWhite
+  equipment:
+    back: ClothingBackpackDuffelWhiteCaptain
+
+# Outer clothing
+- type: loadout
+  id: CaptainWhiteCarapace
+  equipment:
+    outerClothing: ClothingOuterArmorCaptainCarapaceWhite
+
+- type: loadout
+  id: CaptainWhiteCoat
+  equipment:
+    outerClothing: ClothingOuterCoatCaptainWhite
+
+- type: loadout
+  id: CaptainSheriffCoat
+  equipment:
+    outerClothing: ClothingOuterCoatCaptainSheriff

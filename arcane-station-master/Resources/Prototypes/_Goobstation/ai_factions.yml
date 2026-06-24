@@ -1,0 +1,39 @@
+- type: npcFaction
+  id: DevilFaction
+  hostile:
+  # Orion-Start
+  - InteQ
+  - InteQHostile
+  # Orion-End
+  - NanoTrasen
+  - Syndicate
+  - Zombie
+  - Revolutionary
+  - Heretic
+  - Wizard
+  - Blob
+
+- type: npcFaction
+  id: Assistant
+  hostile:
+  # Orion-Start
+  - InteQ
+  - InteQHostile
+  # Orion-End
+  - NanoTrasen
+  - Dragon
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Changeling
+  - Heretic
+  - Blob
+  - Shadowling
+  - Wizard
+  - PirateFaction
+  - Wraith
+  - Lavafauna
+  - AllHostile
+  - Xenoborg

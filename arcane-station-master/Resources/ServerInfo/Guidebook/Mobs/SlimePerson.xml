@@ -1,0 +1,37 @@
+<!--
+SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+SPDX-FileCopyrightText: 2024 BeeRobynn <robynthewarcrime@proton.me>
+SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Just-a-Unity-Dev <67359748+Just-a-Unity-Dev@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 Kira Bridgeton <161087999+Verbalase@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 deepdarkdepths <155149356+deepdarkdepths@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 kbailey-git <84491830+kbailey-git@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Solstice <solsticeofthewinter@gmail.com>
+SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Слаймолюды
+  <Box>
+    <GuideEntityEmbed Entity="MobSlimePerson" Caption=""/>
+  </Box>
+  Слаймолюды - слаймоподобные существа с планеты Ксарксис 5, ростом от 100 до 150 сантиметров. Эти существа дышат азотом вместо кислорода который присутствует в воздухе станции, но его сложнее найти в сжатом виде в газовых баллонах. Они получают значительный урон, если их обрызгать водой, но могут (и, как и другие виды, должны) пить её.
+
+  Слаймолюды обладают чуть более ускоренной регенерацией по сравнению с другими гуманоидами. Так же, они способны делать свои кулаки более твердыми нанося более сильные удары за счет уменьшения их скорости.
+
+  ## Внутреннее хранилище
+  Внутри оболочки слаймолюда есть внутреннее хранилище, объемом 2x3. Любой может видеть что находится внутри и забрать это без разрешения, так что будьте осторожнее. При превращении в гераса внутреннее хранилище остается.
+
+  Slimepeople have accelerated regeneration compared to other humanoids.
+
+  Slime people have no bones and their limbs come off easier.
+
+  Slime Blood is technically a source of moderately filling food for other species, although drinking the blood of your coworkers is usually frowned upon.
+  They suffocate 80% slower, but take pressure damage 9% faster. This makes them by far the species most capable to survive in hard vacuum. For a while.
+
+  They take [color=#1e90ff]40% less Blunt damage and 20% less Poison damage[/color], but [color=#ffa500]50% more Cold damage, 15% more Slash damage and 15% more Piercing damage[/color].
+
+</Document>

@@ -1,0 +1,47 @@
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Light;
+using Content.Shared.PDA;
+using Robust.Client.GameObjects;
+using Robust.Shared.Utility;
+
+namespace Content.Client.PDA;
+
+public sealed class PdaVisualizerSystem : VisualizerSystem<PdaVisualsComponent>
+{
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+    protected override void OnAppearanceChange(EntityUid uid, PdaVisualsComponent comp, ref AppearanceChangeEvent args)
+    {
+        if (args.Sprite == null)
+            return;
+
+        if (AppearanceSystem.TryGetData<string>(uid, PdaVisuals.PdaType, out var pdaType, args.Component))
+            _sprite.LayerSetRsiState((uid, args.Sprite), PdaVisualLayers.Base, pdaType);
+
+        // Orion-Start
+        if (AppearanceSystem.TryGetData<SpriteSpecifier>(uid, PdaVisuals.ScreenState, out var screenState, args.Component))
+            _sprite.LayerSetSprite((uid, args.Sprite), PdaVisualLayers.Screen, screenState);
+        // Orion-End
+
+        if (AppearanceSystem.TryGetData<bool>(uid, UnpoweredFlashlightVisuals.LightOn, out var isFlashlightOn, args.Component))
+            _sprite.LayerSetVisible((uid, args.Sprite), PdaVisualLayers.Flashlight, isFlashlightOn);
+
+        if (AppearanceSystem.TryGetData<bool>(uid, PdaVisuals.IdCardInserted, out var isCardInserted, args.Component))
+            _sprite.LayerSetVisible((uid, args.Sprite), PdaVisualLayers.IdLight, isCardInserted);
+        //goob addition for pen visual
+        if (AppearanceSystem.TryGetData<bool>(uid, PdaVisuals.PenInserted, out var isPenInserted, args.Component))
+            _sprite.LayerSetVisible((uid, args.Sprite), PdaVisualLayers.Pen, isPenInserted);
+    }
+
+    public enum PdaVisualLayers : byte
+    {
+        Base,
+        Screen, // Orion
+        Flashlight,
+        IdLight,
+        Pen //goob addition for pen visual
+    }
+}

@@ -1,0 +1,8 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float Intensity;
+
+void fragment() {
+    highp vec4 col = zTextureSpec(SCREEN_TEXTURE, UV);
+    highp vec3 boosted = col.rgb * (1.0 + Intensity);
+    COLOR = vec4(min(boosted, vec3(1.0)), col.a);
+}

@@ -1,0 +1,76 @@
+- type: entity
+  parent: [ BaseMajorContraband, ClothingOuterHardsuitSyndieElite ]
+  id: ClothingOuterHardsuitInteQElite
+  name: elite InteQ hardsuit
+  description: An upgraded version of the syndicate hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
+  components:
+  - type: Sprite
+    sprite: _Orion/Clothing/OuterClothing/Hardsuits/elite_inteq_hardsuit.rsi
+  - type: Clothing
+    sprite: _Orion/Clothing/OuterClothing/Hardsuits/elite_inteq_hardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototypes: #goobstation change
+      head: ClothingHeadHelmetHardsuitInteQElite
+
+- type: entity
+  parent: [ BaseMajorContraband, ClothingOuterHardsuitSyndie ]
+  id: ClothingOuterHardsuitInteQ
+  name: InteQ hardsuit
+  description: An upgraded version of the syndicate hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
+  components:
+  - type: Sprite
+    sprite: _Orion/Clothing/OuterClothing/Hardsuits/inteq_hardsuit.rsi
+  - type: Clothing
+    sprite: _Orion/Clothing/OuterClothing/Hardsuits/inteq_hardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototypes: #goobstation change
+      head: ClothingHeadHelmetHardsuitInteQ
+
+- type: entity
+  parent: [ BaseMajorContraband, ClothingOuterHardsuitSyndie ]
+  id: ClothingOuterHardsuitSyndicateInteQ
+  name: InteQ hardsuit
+  description: An upgraded version of the syndicate hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
+  components:
+  - type: Sprite
+    sprite: _Orion/Clothing/OuterClothing/Hardsuits/inteq_syn_hardsuit.rsi
+  - type: Clothing
+    sprite: _Orion/Clothing/OuterClothing/Hardsuits/inteq_syn_hardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototypes: #goobstation change
+      head: ClothingHeadHelmetHardsuitSyndicateInteQ
+
+- type: entity
+  parent: ClothingOuterHardsuitCBURN
+  id: ClothingOuterHardsuitCBURNLeader
+  name: CBURN leader hardsuit
+  description: A lightweight yet strong exosuit used for special cleanup operations.
+  components:
+  - type: Sprite
+    sprite: _Orion/Clothing/OuterClothing/Hardsuits/cburn_leader.rsi
+  - type: Clothing
+    sprite: _Orion/Clothing/OuterClothing/Hardsuits/cburn_leader.rsi
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHelmetCBURNLeader
+
+- type: entity
+  parent: ClothingOuterHardsuitSecurity
+  id: ClothingOuterHardsuitOTAAlliance
+  name: OTA alliance hardsuit
+  description: OTA Stormtrooper Hardsuit.
+  components:
+  - type: Sprite
+    sprite: _Orion/Clothing/OuterClothing/Hardsuits/OTA_alliance_hardsuit.rsi
+  - type: Clothing
+    sprite: _Orion/Clothing/OuterClothing/Hardsuits/OTA_alliance_hardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototypes: #goobstation change
+      head: ClothingHeadHelmetHardsuitOTAAlliance
+
+- type: entity
+  parent: ClothingOuterHardsuitDeathsquad
+  id: ClothingOuterHardsuitDeathsquadUnremovable
+  suffix: Unremoveable
+  components:
+  - type: Unremoveable

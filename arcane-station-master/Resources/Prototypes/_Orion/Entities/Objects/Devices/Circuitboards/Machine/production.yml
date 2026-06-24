@@ -1,0 +1,128 @@
+- type: entity
+  id: DocumentPrinterMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: document printer machine board
+  description: A machine printed circuit board for a document printer
+  components:
+  - type: MachineBoard
+    prototype: DocumentPrinter
+    stackRequirements:
+      Glass: 1
+    partRequirements:
+      Servo: 2
+      ScanningModule: 4
+      MicroLaser: 4
+
+- type: entity
+  parent: ProtolatheMachineCircuitboard
+  id: ProtolatheAncientMachineCircuitboard
+  components:
+  - type: MachineBoard
+    prototype: ProtolatheAncient
+
+- type: entity
+  parent: CircuitImprinterMachineCircuitboard
+  id: CircuitImprinterAncientMachineCircuitboard
+  components:
+  - type: MachineBoard
+    prototype: CircuitImprinterAncient
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: ResearchDestructiveAnalyzerMachineCircuitboard
+  name: destructive analyzer machine board
+  description: A machine printed circuit board for a destructive analyzer.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: ResearchDestructiveAnalyzer
+    stackRequirements:
+      Cable: 5
+    partRequirements:
+      Servo: 2
+      ScanningModule: 2
+      MicroLaser: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: ResearchExperimentalDestructiveScannerMachineCircuitboard
+  name: experimental destructive scanner machine board
+  description: A machine printed circuit board for an experimental destructive scanner.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: ResearchExperimentalDestructiveScanner
+    stackRequirements:
+      Glass: 5
+      Cable: 5
+    partRequirements:
+      Servo: 2
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: QuantumServerMachineCircuitboard
+  name: quantum server machine board
+  description: A machine printed circuit board for a quantum server.
+  components:
+  - type: MachineBoard
+    prototype: QuantumServer
+    stackRequirements:
+      Cable: 5
+      Glass: 4
+    partRequirements:
+      Servo: 2
+      Capacitor: 2
+      ScanningModule: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: NetpodMachineCircuitboard
+  name: netpod machine board
+  description: A machine printed circuit board for a neural link netpod.
+  components:
+  - type: MachineBoard
+    prototype: Netpod
+    stackRequirements:
+      Cable: 3
+      Glass: 3
+    partRequirements:
+      Servo: 1
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: ByteforgeMachineCircuitboard
+  name: byteforge machine board
+  description: A machine printed circuit board for a byteforge.
+  components:
+  - type: MachineBoard
+    prototype: Byteforge
+    stackRequirements:
+      Cable: 4
+      Glass: 4
+    partRequirements:
+      Servo: 2
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: QuantumConsoleCircuitboard
+  name: quantum console board
+  description: A computer printed circuit board for a quantum domain control console.
+  components:
+  - type: ComputerBoard
+    prototype: QuantumConsole
+
+- type: entity
+  parent: BaseMachineCircuitboard
+  id: SmartFridgeMachineCircuitboard
+  name: smart fridge machine board
+  description: A machine printed circuit board for a smart fridge.
+  components:
+  - type: MachineBoard
+    prototype: SmartFridge
+    stackRequirements:
+      Cable: 2
+      Glass: 2
+    partRequirements:
+      MatterBin: 1

@@ -1,0 +1,12 @@
+ent-BaseMagazineBoxLightRifle = ammunition box (5.45mm rifle)
+    .desc = { ent-BaseItem.desc }
+ent-MagazineBoxLightRifleBig = ammunition box (5.45mm rifle)
+    .desc = { ent-BaseMagazineBoxLightRifle.desc }
+ent-MagazineBoxLightRifle = ammunition box (5.45mm rifle)
+    .desc = A cardboard box of 5.45mm rifle rounds. Intended to hold general-purpose kinetic ammunition.
+ent-MagazineBoxLightRiflePractice = ammunition box (5.45mm practice)
+    .desc = A cardboard box of 5.45mm rifle rounds. Intended to hold non-harmful chalk ammunition.
+ent-MagazineBoxLightRifleIncendiary = ammunition box (5.45mm incendiary)
+    .desc = A cardboard box of 5.45mm rifle rounds. Intended to hold self-igniting incendiary ammunition.
+ent-MagazineBoxLightRifleUranium = ammunition box (5.45mm uranium)
+    .desc = A cardboard box of 5.45mm rifle rounds. Intended to hold exotic uranium-core ammunition.

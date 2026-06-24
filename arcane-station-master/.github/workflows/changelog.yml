@@ -1,0 +1,68 @@
+# SPDX-FileCopyrightText: 2024 Piras314 <92357316+Piras314@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# From https://github.com/DeltaV-Station/Delta-v/
+name: PR Changelogs
+concurrency: commit_action
+on:
+  pull_request_target:
+    types: [closed]
+
+env:
+  GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
+  CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
+  PR_NUMBER: ${{ github.event.number }}
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Master
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.BOT_TOKEN }}
+          ref: ${{ vars.CHANGELOG_BRANCH }}
+
+      - name: Setup Git
+        shell: bash
+        run: |
+          git config user.name "${{ vars.CHANGELOG_USER }}"
+          git config user.email "${{ vars.CHANGELOG_EMAIL }}"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install Dependencies
+        working-directory: Tools/changelog
+        shell: bash
+        run: npm install --ignore-scripts --no-package-lock
+
+      - name: Generate Changelog
+        working-directory: Tools/changelog
+        shell: bash
+        run: node changelog.js
+
+      - name: Commit Changelog
+        shell: bash
+        env:
+          CHANGELOG_BRANCH: ${{ vars.CHANGELOG_BRANCH }}
+          CHANGELOG_MESSAGE: ${{ vars.CHANGELOG_MESSAGE }}
+        run: |
+          git add -- "${CHANGELOG_DIR}"
+
+          if git diff --cached --quiet; then
+            echo "Changelog не изменён."
+            exit 0
+          fi
+
+          git commit -m "${CHANGELOG_MESSAGE} (#${PR_NUMBER})"
+          git push origin "HEAD:${CHANGELOG_BRANCH}"

@@ -1,0 +1,29 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float Intensity;
+const highp float Threshold = 0.70;
+
+highp vec3 sampleBright(highp vec2 uv) {
+    highp vec3 c = zTextureSpec(SCREEN_TEXTURE, uv).rgb;
+    highp float l = dot(c, vec3(0.299, 0.587, 0.114));
+    highp float w = max(l - Threshold, 0.0) / max(1.0 - Threshold, 0.001);
+    w = w * w;
+    return c * w;
+}
+
+void fragment() {
+    highp vec4 base = zTextureSpec(SCREEN_TEXTURE, UV);
+    highp vec2 ps = SCREEN_PIXEL_SIZE * 2.0;
+
+    highp vec3 bloom = vec3(0.0);
+    bloom += sampleBright(UV + vec2(-ps.x, -ps.y)) * 0.0625;
+    bloom += sampleBright(UV + vec2( 0.0,  -ps.y)) * 0.125;
+    bloom += sampleBright(UV + vec2( ps.x, -ps.y)) * 0.0625;
+    bloom += sampleBright(UV + vec2(-ps.x,  0.0)) * 0.125;
+    bloom += sampleBright(UV)                     * 0.25;
+    bloom += sampleBright(UV + vec2( ps.x,  0.0)) * 0.125;
+    bloom += sampleBright(UV + vec2(-ps.x,  ps.y)) * 0.0625;
+    bloom += sampleBright(UV + vec2( 0.0,   ps.y)) * 0.125;
+    bloom += sampleBright(UV + vec2( ps.x,  ps.y)) * 0.0625;
+
+    COLOR = vec4(base.rgb + bloom * Intensity, base.a);
+}

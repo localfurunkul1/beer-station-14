@@ -1,0 +1,181 @@
+# SPDX-FileCopyrightText: 2024 Aidenkrz <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2024 BombasterDS <115770678+BombasterDS@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 GreyMario <mariomister541@gmail.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 coderabbitai[bot] <136622811+coderabbitai[bot]@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Vrilly <tnjans@outlook.de>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# vocal emotes
+#- type: emote # Orion-Edit: Duplicate
+#  id: Hiss
+#  name: Hiss
+#  category: Vocal
+#  icon: _Goobstation/Interface/Emotes/hiss.png
+#  whitelist:
+#    tags:
+#    - FelinidEmotes
+#    - HarpyEmotes
+#    - ReptilianEmotes
+#  blacklist:
+#    components:
+#    - BorgChassis
+#  chatMessages: ["chat-emote-msg-hisses"]
+#  chatTriggers:
+#    - hiss
+#    - hisses
+#    - hissing
+#    - hissed
+
+- type: emote
+  id: Meow
+  name: chat-emote-name-catmeow # Orion-Edit: Localization
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/meow.png
+  whitelist:
+    tags:
+    - FelinidEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-catmeow"]
+  chatTriggers:
+    - meow
+    - meows
+    - meowing
+    - meowed
+    - miau
+    - miaus
+    - nya
+    - nyas
+    - mraow
+    - mraows
+    # Orion-Start
+    - мяу
+    - мяу.
+    - мяу!
+    - мяукает
+    - мяукает.
+    - мяукает!
+    - мрау
+    - мрау.
+    - мрау!
+    # Orion-End
+    # Arcane-Start
+    - мяукнул
+    - мяукнул.
+    - мяукнул!
+    - мяукнула
+    - мяукнула.
+    - мяукнула!
+    # Arcane-End
+
+- type: emote
+  id: Mew
+  name: chat-emote-name-mew # Orion-Edit: Localization
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/mew.png
+  whitelist:
+    tags:
+    - FelinidEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-mew"]
+  chatTriggers:
+    - mew
+    - mews
+    - mewing
+    - mewed
+    # Orion-Start
+    - мью
+    - мью.
+    - мью!
+    # Orion-End
+    # Arcane-Start
+    - мяв
+    - мяв.
+    - мяв!
+    - ня
+    - ня.
+    - ня!
+    - мя
+    - мя.
+    - мя!
+    - мявкает
+    - мявкает.
+    - мявкает!
+    - мявкнул
+    - мявкнул.
+    - мявкнул!
+    - мявкнула
+    - мявкнула.
+    - мявкнула!
+    # Arcane-End
+
+- type: emote
+  id: Growl
+  name: chat-emote-name-growl # Orion-Edit: Localization
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/growl.png
+  whitelist:
+    tags:
+    - FelinidEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-growl"]
+  chatTriggers:
+    - growl
+    - growls
+    - growling
+    - growled
+    # Orion-Start
+    - рычит
+    - рычит.
+    - рычит!
+    - зарычал
+    - зарычал.
+    - зарычал!
+    - зарычала
+    - зарычала.
+    - зарычала!
+    # Orion-End
+
+- type: emote
+  id: Purr
+  name: chat-emote-name-purr # Orion-Edit: Localization
+  category: Vocal
+  icon: _Goobstation/Interface/Emotes/purr.png
+  whitelist:
+    tags:
+    - FelinidEmotes
+    - HarpyEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-purr"]
+  chatTriggers:
+    - purr
+    - purrs
+    - purring
+    - purred
+    # Orion-Start
+    - мурчит
+    - мурчит.
+    - мурчит!
+    - мурлыкает
+    - мурлыкает.
+    - мурлыкает!
+    - замурчал
+    - замурчал.
+    - замурчал!
+    - замурчала
+    - замурчала.
+    - замурчала!
+    # Orion-End

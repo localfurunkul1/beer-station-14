@@ -1,0 +1,29 @@
+- type: language
+  id: FloorGoblin
+  speech:
+    color: "#288f43"
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    # Orion-Edit-Start: Localization
+    replacement:
+    - ми
+    - мими
+    - мимими
+    - йойо
+    - ийо
+    - ме
+    - мемимими
+    - мемими
+    - мьи
+    - биби
+    - би
+    - мье
+    - йо
+    # Orion-Edit-End: Localization

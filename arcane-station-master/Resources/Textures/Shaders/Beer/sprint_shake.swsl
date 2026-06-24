@@ -1,0 +1,25 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float Intensity;
+
+void fragment() {
+    highp float t = TIME * 10.0;
+    highp float shakeX = sin(t * 1.7) * 0.0012 * Intensity;
+    highp float shakeY = cos(t * 2.3 + 0.6) * 0.0015 * Intensity;
+    highp vec2 jitter = vec2(shakeX, shakeY);
+
+    highp float chroma = 0.0009 * Intensity;
+    highp vec2 dir = vec2(cos(t * 0.7), sin(t * 0.7));
+
+    highp vec4 r = zTextureSpec(SCREEN_TEXTURE, UV + jitter + dir * chroma);
+    highp vec4 g = zTextureSpec(SCREEN_TEXTURE, UV + jitter);
+    highp vec4 b = zTextureSpec(SCREEN_TEXTURE, UV + jitter - dir * chroma);
+
+    highp vec4 col = vec4(r.r, g.g, b.b, g.a);
+
+    highp vec2 centered = UV - vec2(0.5, 0.5);
+    highp float vig = 1.0 - dot(centered, centered) * 0.30 * Intensity;
+    col.rgb *= vig;
+
+    col.rgb *= 1.015;
+    COLOR = col;
+}

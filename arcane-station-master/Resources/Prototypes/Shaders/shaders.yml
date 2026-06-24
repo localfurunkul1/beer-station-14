@@ -1,0 +1,208 @@
+# SPDX-FileCopyrightText: 2018 clusterfack <8516830+clusterfack@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 AJCM-git <60196617+AJCM-git@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2020 R. Neuser <rneuser@iastate.edu>
+# SPDX-FileCopyrightText: 2020 Víctor Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 E F R <602406+Efruit@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 GraniteSidewalk <32942106+GraniteSidewalk@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+# SPDX-FileCopyrightText: 2022 Flipp Syder <76629141+vulppine@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Kara D <lunarautomaton6@gmail.com>
+# SPDX-FileCopyrightText: 2022 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 Rane <60792108+Elijahrane@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2022 keronshb <54602815+keronshb@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 eoineoineoin <github@eoinrul.es>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2024 chromiumboy <50505512+chromiumboy@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 deathride58 <deathride58@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: shader
+  id: CircleMask
+  kind: source
+  path: "/Textures/Shaders/circle_mask.swsl"
+  params:
+    CircleRadius: 15.0
+    CircleMinDist: 0.0
+    CirclePow: 0.5
+    CircleMax: 4.0
+    CircleMult: 0.5
+
+- type: shader
+  id: GradientCircleMask
+  kind: source
+  path: "/Textures/Shaders/gradient_circle_mask.swsl"
+
+- type: shader
+  id: WorldGradientCircle
+  kind: source
+  path: "/Textures/Shaders/world_gradient_circle.swsl"
+
+- type: shader
+  id: ColoredScreenBorder
+  kind: source
+  path: "/Textures/Shaders/colored_screen_border.swsl"
+
+- type: shader
+  id: FlashedEffect
+  kind: source
+  path: "/Textures/Shaders/flashed_effect.swsl"
+
+- type: shader
+  id: Singularity
+  kind: source
+  path: "/Textures/Shaders/singularity.swsl"
+
+- type: shader
+  id: Radiation
+  kind: source
+  path: "/Textures/Shaders/radiation.swsl"
+  params:
+    positionInput: 0,0
+    life: 0
+
+- type: shader
+  id: Rainbow
+  kind: source
+  path: "/Textures/Shaders/rainbow.swsl"
+
+# sin city effect: everything is greyscale, except red
+- type: shader
+  id: Noir
+  kind: source
+  path: "/Textures/Shaders/noir.swsl"
+
+- type: shader
+  id: CameraStatic
+  kind: source
+  path: "/Textures/Shaders/camera_static.swsl"
+
+- type: shader
+  id: Drunk
+  kind: source
+  path: "/Textures/Shaders/drunk.swsl"
+
+- type: shader
+  id: Drowsiness
+  kind: source
+  path: "/Textures/Shaders/radial_blur.swsl"
+
+- type: shader
+  id: Texture
+  kind: source
+  path: "/Textures/Shaders/texture.swsl"
+  params:
+    positionInput: 0, 0
+    pixelSize: 32, 32
+    alphaCutoff: 0
+    removeTransparency: false
+
+- type: shader
+  id: BlurryVisionX
+  kind: source
+  path: "/Textures/Shaders/blurryx.swsl"
+
+- type: shader
+  id: BlurryVisionY
+  kind: source
+  path: "/Textures/Shaders/blurryy.swsl"
+
+# cloaking distortion effect
+- type: shader
+  id: Stealth
+  kind: source
+  path: "/Textures/Shaders/stealth.swsl"
+
+- type: shader
+  id: PaperStamp
+  kind: source
+  path: "/Textures/Shaders/paperstamp.swsl"
+
+# Simple horizontal cut
+- type: shader
+  id: HorizontalCut
+  kind: source
+  path: "/Textures/Shaders/hcut.swsl"
+
+# Stylized simulation of blindness
+- type: shader
+  id: Cataracts
+  kind: source
+  path: "/Textures/Shaders/cataracts.swsl"
+
+- type: shader
+  id: Hologram
+  kind: source
+  path: "/Textures/Shaders/hologram.swsl"
+
+- type: shader
+  id: BeerFisheye
+  kind: source
+  path: "/Textures/Shaders/Beer/fisheye.swsl"
+  params:
+    Intensity: 0.05
+
+- type: shader
+  id: BeerSprintShake
+  kind: source
+  path: "/Textures/Shaders/Beer/sprint_shake.swsl"
+  params:
+    Intensity: 1.0
+
+- type: shader
+  id: BeerWarmFilter
+  kind: source
+  path: "/Textures/Shaders/Beer/warm_filter.swsl"
+  params:
+    Intensity: 0.04
+
+- type: shader
+  id: BeerBloom
+  kind: source
+  path: "/Textures/Shaders/Beer/bloom.swsl"
+  params:
+    Intensity: 0.45
+
+- type: shader
+  id: BeerBrightness
+  kind: source
+  path: "/Textures/Shaders/Beer/brightness.swsl"
+  params:
+    Intensity: 0.08
+
+- type: shader
+  id: BeerVignette
+  kind: source
+  path: "/Textures/Shaders/Beer/vignette.swsl"
+  params:
+    Intensity: 0.0
+
+- type: shader
+  id: BeerBloodSplatter
+  kind: source
+  path: "/Textures/Shaders/Beer/blood_splatter.swsl"
+  params:
+    Intensity: 0.0
+    Spot1: 0,0,0,0
+    Spot2: 0,0,0,0
+    Spot3: 0,0,0,0
+    Spot4: 0,0,0,0
+
+- type: shader
+  id: BeerHpPulse
+  kind: source
+  path: "/Textures/Shaders/Beer/hp_pulse.swsl"
+  params:
+    Intensity: 0.0
+
+- type: shader
+  id: BeerLove
+  kind: source
+  path: "/Textures/Shaders/Beer/love.swsl"
+  params:
+    Intensity: 0.0
+

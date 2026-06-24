@@ -1,0 +1,18 @@
+- type: entity
+  parent: BaseStationEventShortDelay
+  id: BeerBlackout
+  components:
+  - type: StationEvent
+    weight: 6
+    duration: 200
+    maxDuration: 220
+    earliestStart: 10
+    minimumPlayers: 5
+    startAudio:
+      path: /Audio/Beer/Events/blackout_alarm.ogg
+      params:
+        volume: -2
+    eventType: Interference
+  - type: GameRule
+    chaosScore: 70
+  - type: BeerBlackoutRule

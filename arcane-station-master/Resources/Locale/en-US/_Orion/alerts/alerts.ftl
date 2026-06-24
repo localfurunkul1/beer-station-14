@@ -1,0 +1,27 @@
+alerts-borer-chemical-name = Chemicals
+alerts-borer-chemical-desc = Chemicals made in your body, used for your abilities.
+
+### Pain Alerts
+alerts-minor-pain-name = Minor Pain
+alerts-minor-pain-desc = You feel a slight ache.
+
+alerts-moderate-pain-name = [color=yellow]Moderate Pain[/color]
+alerts-moderate-pain-desc = [color=yellow]The pain is noticeable and distracting.[/color]
+
+alerts-severe-pain-name = [color=red]Severe Pain[/color]
+alerts-severe-pain-desc = [color=red]The pain is intense and hard to ignore.[/color]
+
+alerts-excruciating-pain-name = [color=red]Excruciating Pain[/color]
+alerts-excruciating-pain-desc = [color=red]The pain is unbearable, making it hard to focus on anything else.[/color]
+
+alerts-disgust-name = [color=yellow]Disgust[/color]
+alerts-disgust-desc = You're not feeling very well...
+
+# Cortical borer
+alerts-borer-sugar-name = Sugar weakness
+alerts-borer-sugar-desc = Your host is protected by sugar. You are greatly weakened.
+
+alerts-soft-crit-name = [color=red]Critical Condition[/color]
+alerts-soft-crit-desc = You are critically injured, can only crawl, and can barely breathe.
+alerts-hard-crit-name = [color=darkred]Severe Critical Condition[/color]
+alerts-hard-crit-desc = You are in severe critical condition and cannot act.

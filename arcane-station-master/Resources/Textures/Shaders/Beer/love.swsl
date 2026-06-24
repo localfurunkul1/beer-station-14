@@ -1,0 +1,24 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float Intensity;
+
+void fragment() {
+    highp vec2 centered = UV - vec2(0.5, 0.5);
+
+    highp float wave1 = sin(UV.y * 9.0 + TIME * 1.6) * 0.0006 * Intensity;
+    highp float wave2 = cos(UV.x * 7.0 - TIME * 1.2) * 0.0005 * Intensity;
+    highp vec2 sampleUv = UV + vec2(wave1, wave2);
+
+    highp vec4 col = zTextureSpec(SCREEN_TEXTURE, sampleUv);
+
+    highp float r2 = dot(centered, centered);
+    highp float vig = clamp((r2 - 0.18) * 2.2, 0.0, 1.0);
+
+    highp vec3 pink = vec3(1.0, 0.55, 0.78);
+    highp vec3 tinted = mix(col.rgb, pink, vig * Intensity * 0.15);
+    tinted *= mix(1.0, 0.96, vig * Intensity * 0.10);
+
+    highp float globalBlush = (1.0 - vig) * Intensity * 0.025;
+    tinted = mix(tinted, pink, globalBlush);
+
+    COLOR = vec4(tinted, col.a);
+}

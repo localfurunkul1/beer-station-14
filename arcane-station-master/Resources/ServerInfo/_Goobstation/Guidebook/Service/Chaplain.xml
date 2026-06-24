@@ -1,0 +1,90 @@
+<Document>
+# Священник
+В бескрайней пустоте космоса человек начинает молиться... Особенно если его выбросили туда без скафандра.
+
+Как священник, вы должны проповедовать какую-нибудь сумасшедшую религию, которую придумаете в раунде, через гарнитуру. Однако, кроме вашего офиса, адского крематория рядом с офисом и редко используемого морга, у вас нет доступа никуда.
+
+  <Box>
+    <GuideEntityEmbed Entity="Bible"/>
+    <GuideEntityEmbed Entity="Nullrod"/>
+    <GuideEntityEmbed Entity="ArmamentsBeacon"/>
+  </Box>
+
+## Религии:
+Вы можете проповедовать любые известные вам современные религии или придумать свою собственную! Главное — чтобы она не противоречила ценностям NanoTrasen, иначе вас могут отправить в бриг.
+
+Если у вас ещё нет своей религии, постройте алтарь и найдите жертву для него:
+
+  <Box>
+    <GuideEntityEmbed Entity="AltarBananium"/>
+    <GuideEntityEmbed Entity="AltarChaos"/>
+    <GuideEntityEmbed Entity="AltarDruid"/>
+    <GuideEntityEmbed Entity="AltarClock"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AltarFangs"/>
+    <GuideEntityEmbed Entity="AltarHeaven"/>
+    <GuideEntityEmbed Entity="AltarConvertMaint"/>
+    <GuideEntityEmbed Entity="AltarNanotrasen"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="AltarSpaceChristian"/>
+    <GuideEntityEmbed Entity="AltarTechnology"/>
+    <GuideEntityEmbed Entity="AltarToolbox"/>
+    <GuideEntityEmbed Entity="AltarDragon"/>
+    <GuideEntityEmbed Entity="AltarEmpire"/>
+  </Box>
+
+  Эти алтари можно построить, поместив соответствующую жертву на базовый алтарь конвертации:
+
+- Bananium Altar: 1 x Bananium
+- Chaos Altar: 1 x Plasma
+- Druid Altar: 1 x Wooden Plank
+- Fanged Altar: 1 x Raw Meat
+- Heaven Altar: 1 x Templar Helmet
+- Maints Altar: 1 x Budget Insulated Gloves
+- Nanotrasen Altar: 1 x Plasteel
+- Space-Christian Altar: 1 x Nun Hood
+- Technology Altar: 1 x Capacitor
+- Toolbox Altar: 1 x Toolbox
+- Clockwork Altar: 1 x Small Power Cell
+- Draconic Altar: 1 x Carp plushie
+- Imperial altar: 1 x Book
+
+## Священные артефакты
+
+  ### Маяк снаряжения
+  Позволяет вам выбрать набор доспехов. Все доспехи имеют одинаковые характеристики.
+
+### Жезл Нуля
+Обсидиановый жезл — ваша защита от сил зла. [color=blue][bold] Если он у вас в руках, вы полностью защищены от магии. [/bold][/color]
+
+Вы можете превратить его в священное оружие, положив на алтарь!
+
+### Enchanting
+
+You can use your Bible and any Altar of your choosing to [textlink="enchant items." link="Enchanting"]
+
+### Spirit Candles
+You can craft a spirit candle by putting a candle on a skull. Spirit Candles are useful against evil spirits like Wraith.
+
+Когда их зажигают, они создают область размером 12х12 метров, на которой видны злые духи. У них также есть специальная функция, когда вы используете их удерживая в руках.
+Используя его [bold]когда злой дух находится в пределах(!!) вашей области размером 12х12[/bold], вы придадите ему материальный вид.
+
+На каждую духовную свечу приходится 2 заряда, и [bold]она расходует заряд только тогда, когда вы обнаруживаете злого духа[/bold].
+
+Череп выпадает, как только свеча расплавится, и вы сможете создать еще один.
+
+## Обязанности
+
+- Богослужения: читать проповеди и петь гимны.
+- Проповедь: большинство экипажа — безбожные язычники, покажите им любовь бога.
+- Похоронные службы: службы безопасности или медицина могут попросить кого-то или что-то кремировать, ознакомьтесь с вашей церковью, чтобы делать это быстро!
+- [bold] Метафизическое расследование: большинство экипажа не знают об угрозах со стороны нечисти, будьте бдительны и следите за подозрительным. [/bold]
+
+### Метафизические угрозы
+Как священник, вы — первая линия защиты от метафизических угроз, [bold] приготовьте Жезл Нуля — время настало. [/bold]
+
+[color=red][bold] Использование чрезмерной силы против целей, которые вы не можете подтвердить как метафизические угрозы, может привести к проблемам с законом. Будьте осторожны и тщательно расследуйте. [/bold][/color]
+
+</Document>

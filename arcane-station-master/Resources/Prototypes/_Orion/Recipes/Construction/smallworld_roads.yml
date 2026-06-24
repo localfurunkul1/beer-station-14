@@ -1,0 +1,103 @@
+- type: construction
+  id: SmallWorldRoadFourWay
+  graph: SmallWorldRoads
+  targetNode: SmallWorldRoadFourWay
+  category: construction-category-misc
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  id: SmallWorldRoadStraight
+  graph: SmallWorldRoads
+  targetNode: SmallWorldRoadStraight
+  category: construction-category-misc
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  id: SmallWorldRoadThreeWay
+  graph: SmallWorldRoads
+  targetNode: SmallWorldRoadThreeWay
+  category: construction-category-misc
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: construction
+  id: SmallWorldRoadTurn
+  graph: SmallWorldRoads
+  targetNode: SmallWorldRoadTurn
+  category: construction-category-misc
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+
+- type: constructionGraph
+  id: SmallWorldRoads
+  graph:
+    - node: start
+      actions:
+        - !type:DestroyEntity {}
+      edges:
+        - to: SmallWorldRoadFourWay
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: SmallWorldRoadStraight
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: SmallWorldRoadThreeWay
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+        - to: SmallWorldRoadTurn
+          steps:
+            - material: Steel
+              amount: 2
+              doAfter: 1
+
+    - node: SmallWorldRoadFourWay
+      entity: SmallWorldRoadFourWay
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: SmallWorldRoadStraight
+      entity: SmallWorldRoadStraight
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: SmallWorldRoadThreeWay
+      entity: SmallWorldRoadThreeWay
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+          steps:
+            - tool: Screwing
+              doAfter: 1
+
+    - node: SmallWorldRoadTurn
+      entity: SmallWorldRoadTurn
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+          steps:
+            - tool: Screwing
+              doAfter: 1

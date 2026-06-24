@@ -1,0 +1,27 @@
+# language for carp and dragons (primarily made so goldfish can actually use translators)
+- type: language
+  id: Carptongue
+  isVisibleLanguage: true
+  speech:
+    color: "#e00d4c"
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
+    # Orion-Edit-Start: Localization
+    replacement:
+      - р
+      - рр
+      - Рр
+      - гр
+      - ср
+      - сс
+      - сСс
+      - рер
+      - роу
+    # Orion-Edit-End: Localization

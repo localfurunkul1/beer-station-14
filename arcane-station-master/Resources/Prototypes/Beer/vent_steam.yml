@@ -1,0 +1,18 @@
+- type: entity
+  id: BeerVentSteam
+  name: vent steam
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+  - type: Sprite
+    sprite: Effects/chemsmoke.rsi
+    state: chemsmoke
+    color: "#e8eef580"
+    scale: 0.55, 0.55
+    noRot: true
+    drawdepth: Effects
+  - type: TimedDespawn
+    lifetime: 1.4
+  - type: Tag
+    tags:
+    - HideContextMenu

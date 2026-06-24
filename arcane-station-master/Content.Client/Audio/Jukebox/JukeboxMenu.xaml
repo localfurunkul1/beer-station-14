@@ -1,0 +1,43 @@
+<!--
+SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+
+SPDX-License-Identifier: MIT
+-->
+
+<ui:FancyWindow xmlns="https://spacestation14.io" xmlns:ui="clr-namespace:Content.Client.UserInterface.Controls"
+                SetSize="600 500" Title="{Loc 'jukebox-menu-title'}"> <!-- Orion-Edit -->
+    <BoxContainer Margin="4 0" Orientation="Vertical">
+        <ItemList Name="MusicList" SelectMode="Button" Margin="3 3 3 3"
+        HorizontalExpand="True" VerticalExpand="True" SizeFlagsStretchRatio="8"/>
+        <BoxContainer Orientation="Vertical">
+            <Label Name="SongSelected" Text="{Loc 'jukebox-menu-selectedsong'}" />
+            <!-- Orion-Edit-Start -->
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True"
+                          VerticalExpand="False" SizeFlagsStretchRatio="1">
+                <Label Name="SongName" Text="---" />
+                <Label Name="DurationLabel" Text="00:00 / 00:00" HorizontalAlignment="Right" HorizontalExpand="True"/>
+            </BoxContainer>
+            <!-- Added Interface to change the music volume in Jukebox.
+                Added volume slider and Volume label to show the volume -->
+            <Slider Name="PlaybackSlider" HorizontalExpand="True" />
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True"
+                          VerticalExpand="False" SizeFlagsStretchRatio="1">
+                <Label Name="VolumeLabel" Text="{Loc 'jukebox-menu-volume'} " />
+                <Label Name="VolumeNumberLabel" Text="0" HorizontalAlignment="Right" HorizontalExpand="True"/>
+            </BoxContainer>
+            <Slider Name="VolumeSlider" HorizontalExpand="True" />
+            <!-- Added volume slider and volume label -->
+        </BoxContainer>
+        <BoxContainer Orientation="Vertical">
+            <PanelContainer StyleClasses="LowDivider" />
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True"
+                          VerticalExpand="False" SizeFlagsStretchRatio="1" HorizontalAlignment="Center">
+                <Button Name="PlayButton" Text="{Loc 'jukebox-menu-buttonplay'}" />
+                <Button Name="StopButton" Text="{Loc 'jukebox-menu-buttonstop'}" />
+                <Button Name="LoopButton" Text="{Loc 'jukebox-menu-button-loop'}" />
+            </BoxContainer>
+        </BoxContainer>
+        <!-- Orion-Edit-End-->
+    </BoxContainer>
+</ui:FancyWindow>

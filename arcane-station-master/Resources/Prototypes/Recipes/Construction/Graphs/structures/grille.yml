@@ -1,0 +1,183 @@
+# SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2021 metalgearsloth <comedian_vs_clown@hotmail.com>
+# SPDX-FileCopyrightText: 2022 Peptide90 <78795277+Peptide90@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2023 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+#
+# SPDX-License-Identifier: MIT
+
+- type: constructionGraph
+  id: Grille
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: grille
+          completed:
+            - !type:AdminLog # Needs a log for start of attempt in addition to the completion log
+              message: "Construction"
+              impact: High
+            - !type:SnapToGrid
+              southRotation: true
+          steps:
+            - material: MetalRod
+              amount: 2
+              doAfter: 1
+
+    - node: grille
+      entity: Grille
+      edges:
+        - to: start
+          completed:
+            - !type:AdminLog # Needs a log for start of attempt in addition to the completion log
+              message: "A grille was cut"
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 2
+            - !type:DeleteEntity
+          steps:
+            - tool: Cutting
+              doAfter: 0.25
+
+        # Orion-Start
+        - to: window
+          steps:
+            - material: Glass
+              amount: 2
+              doAfter: 3
+
+        - to: reinforcedWindow
+          steps:
+            - material: ReinforcedGlass
+              amount: 2
+              doAfter: 2
+
+        - to: uraniumWindow
+          steps:
+            - material: UraniumGlass
+              amount: 2
+              doAfter: 2
+
+        - to: reinforcedUraniumWindow
+          steps:
+            - material: ReinforcedUraniumGlass
+              amount: 2
+              doAfter: 3
+
+        - to: plasmaWindow
+          steps:
+            - material: PlasmaGlass
+              amount: 2
+              doAfter: 2
+
+        - to: reinforcedPlasmaWindow
+          steps:
+            - material: ReinforcedPlasmaGlass
+              amount: 2
+              doAfter: 3
+
+        - to: shuttleWindow
+          steps:
+            - material: Plasteel
+              amount: 2
+            - material: ReinforcedGlass
+              amount: 2
+              doAfter: 4
+
+#        - to: plastitaniumWindow
+#          steps:
+#            - material: PlasteelGlass
+#              amount: 2
+#              doAfter: 3
+
+        - to: clockworkWindow
+          steps:
+            - material: ClockworkGlass
+              amount: 2
+              doAfter: 3
+
+#        - to: tintedWindow
+#          steps:
+#            - material: ReinforcedGlass
+#              amount: 2
+#              doAfter: 2
+        # Orion-End
+
+    - node: grilleBroken
+      entity: GrilleBroken
+      edges:
+        - to: start
+          completed:
+            - !type:SpawnPrototype
+              prototype: PartRodMetal1
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Cutting
+        - to: grille
+          steps:
+            - material: MetalRod
+              amount: 1
+              doAfter: 0.5
+
+    # Orion-Start
+    - node: window
+      entity: Window
+      keepOriginalEntity: true
+      actions:
+      - !type:SnapToGrid {}
+
+    - node: reinforcedWindow
+      entity: ReinforcedWindow
+      keepOriginalEntity: true
+      actions:
+      - !type:SnapToGrid {}
+
+    - node: uraniumWindow
+      entity: UraniumWindow
+      keepOriginalEntity: true
+      actions:
+      - !type:SnapToGrid {}
+
+    - node: reinforcedUraniumWindow
+      entity: ReinforcedUraniumWindow
+      keepOriginalEntity: true
+      actions:
+      - !type:SnapToGrid {}
+
+    - node: plasmaWindow
+      entity: PlasmaWindow
+      keepOriginalEntity: true
+      actions:
+      - !type:SnapToGrid {}
+
+    - node: reinforcedPlasmaWindow
+      entity: ReinforcedPlasmaWindow
+      keepOriginalEntity: true
+      actions:
+      - !type:SnapToGrid {}
+
+    - node: shuttleWindow
+      entity: ShuttleWindow
+      keepOriginalEntity: true
+      actions:
+      - !type:SnapToGrid {}
+
+#    - node: plastitaniumWindow
+#      entity: PlastitaniumWindow
+#      keepOriginalEntity: true
+#      actions:
+#      - !type:SnapToGrid {}
+
+    - node: clockworkWindow
+      entity: ClockworkWindow
+      keepOriginalEntity: true
+      actions:
+      - !type:SnapToGrid {}
+
+#    - node: tintedWindow
+#      entity: TintedWindow
+#      keepOriginalEntity: true
+#      actions:
+#      - !type:SnapToGrid {}
+    # Orion-End

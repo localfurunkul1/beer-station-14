@@ -1,0 +1,13 @@
+ent-ClothingOuterHardsuitInteQElite = элитный скафандр Интек
+    .desc = { ent-ClothingOuterHardsuitInteQ.desc }
+ent-ClothingOuterHardsuitInteQ = скафандр Интек
+    .desc = Модернизированная версия боевого скафандра Синдиката, отличающаяся повышенной огнестойкостью, устойчивостью к давлению и превосходной броней.
+ent-ClothingOuterHardsuitSyndicateInteQ = скафандр Интек
+    .desc = { ent-ClothingOuterHardsuitInteQ.desc }
+ent-ClothingOuterHardsuitCBURNLeader = скафандр лидера РХБЗЗ
+    .desc = { ent-ClothingOuterHardsuitCBURN.desc }
+ent-ClothingOuterHardsuitOTAAlliance = скафандр ОТА альянса
+    .desc = Скафандр юнита ОТА.
+ent-ClothingOuterHardsuitDeathsquadUnremovable = скафандр эскадрона смерти
+    .suffix = Неснимаемый
+    .desc = Продвинутый бронекостюм, применяемый спецназом в специальных операциях.

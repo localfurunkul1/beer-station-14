@@ -1,0 +1,10 @@
+ent-BaseMagazineBoxPistol = ammunition box (9mm auto)
+    .desc = { ent-BaseItem.desc }
+ent-MagazineBoxPistol = ammunition box (9mm auto)
+    .desc = A cardboard box of 9mm auto rounds. Intended to hold general-purpose kinetic ammunition.
+ent-MagazineBoxPistolPractice = ammunition box (9mm practice)
+    .desc = A cardboard box of 9mm auto rounds. Intended to hold non-harmful chalk ammunition.
+ent-MagazineBoxPistolIncendiary = ammunition box (9mm incendiary)
+    .desc = A cardboard box of 9mm auto rounds. Intended to hold self-igniting incendiary ammunition.
+ent-MagazineBoxPistolUranium = ammunition box (9mm uranium)
+    .desc = A cardboard box of 9mm auto rounds. Intended to hold exotic uranium-core ammunition.

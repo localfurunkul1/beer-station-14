@@ -1,0 +1,14 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float Intensity;
+
+void fragment() {
+    highp vec2 centered = UV - vec2(0.5, 0.5);
+    highp float r2 = dot(centered, centered);
+    highp vec2 distorted = centered * (1.0 + Intensity * r2);
+    highp vec2 sampleUv = distorted + vec2(0.5, 0.5);
+    if (sampleUv.x < 0.0 || sampleUv.x > 1.0 || sampleUv.y < 0.0 || sampleUv.y > 1.0) {
+        COLOR = vec4(0.0, 0.0, 0.0, 1.0);
+        return;
+    }
+    COLOR = zTextureSpec(SCREEN_TEXTURE, sampleUv);
+}

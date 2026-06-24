@@ -1,0 +1,33 @@
+# Used by Blob.
+- type: language
+  id: Blob
+  speech:
+    fontId: Monospace # TODO - Make a better font selection instead of copying Silicon.
+    boldFontId: MonospaceBold
+    color: "#800080"
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: slime # TODO: Sprite it
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - bab
+    - bob
+    - beb
+    - bub
+    - gab
+    - gob
+    - geb
+    - gub
+    - blab
+    - blob
+    - bleb
+    - blub
+    - glab
+    - glob
+    - gleb
+    - glub

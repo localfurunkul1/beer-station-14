@@ -1,0 +1,36 @@
+- type: entity
+  parent: MobCow
+  id: MobWisdomCow
+  name: wisdom cow
+  description: Known for its wisdom, shares it with all.
+  components:
+  - type: Advertise
+    hideFromChat: false
+    minimumWait: 12
+    maximumWait: 80
+    pack: Wisdom
+  - type: LanguageSpeaker
+    currentLanguage: TauCetiBasic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Cow
+    understands:
+    - TauCetiBasic
+    - Cow
+  - type: Speech
+    speechSounds: Baritone
+
+- type: entity
+  parent: MobReindeerBuck
+  id: MobReindeerBuckBitrunning
+  suffix: Bitrunning
+  components:
+  - type: BitrunningDomainEnemyObjective
+
+- type: entity
+  parent: MobReindeerDoe
+  id: MobReindeerDoeBitrunning
+  suffix: Bitrunning
+  components:
+  - type: BitrunningDomainEnemyObjective

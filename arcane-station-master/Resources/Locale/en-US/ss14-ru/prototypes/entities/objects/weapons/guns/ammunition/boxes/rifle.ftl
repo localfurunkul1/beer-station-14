@@ -1,0 +1,12 @@
+ent-BaseMagazineBoxRifle = { ent-BaseItem }
+    .desc = { ent-BaseItem.desc }
+ent-MagazineBoxRifleBig = ammunition box (5.56mm rifle)
+    .desc = { ent-BaseMagazineBoxRifle.desc }
+ent-MagazineBoxRifle = ammunition box (5.56mm rifle)
+    .desc = { ent-BaseMagazineBoxRifle.desc }
+ent-MagazineBoxRiflePractice = ammunition box (5.56mm practice)
+    .desc = { ent-BaseMagazineBoxRifle.desc }
+ent-MagazineBoxRifleIncendiary = ammunition box (5.56mm incendiary)
+    .desc = { ent-BaseMagazineBoxRifle.desc }
+ent-MagazineBoxRifleUranium = ammunition box (5.56mm uranium)
+    .desc = { ent-BaseMagazineBoxRifle.desc }

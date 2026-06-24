@@ -1,0 +1,396 @@
+// SPDX-FileCopyrightText: 2021 20kdc <asdd2808@gmail.com>
+// SPDX-FileCopyrightText: 2021 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
+// SPDX-FileCopyrightText: 2022 Illiux <newoutlook@gmail.com>
+// SPDX-FileCopyrightText: 2022 mirrorcult <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
+// SPDX-FileCopyrightText: 2024 Aiden <aiden@djkraz.com>
+// SPDX-FileCopyrightText: 2024 Alice "Arimah" Heurlin <30327355+arimah@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Chief-Engineer <119664036+Chief-Engineer@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 DrSmugleaf <10968691+DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Errant <35878406+Errant-4@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Flareguy <78941145+Flareguy@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 HS <81934438+HolySSSS@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mnemotechnican <69920617+Mnemotechnician@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Mr. 27 <45323883+Dutch-VanDerLinde@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 PJBot <pieterjan.briers+bot@gmail.com>
+// SPDX-FileCopyrightText: 2024 Pieter-Jan Briers <pieterjan.briers+git@gmail.com>
+// SPDX-FileCopyrightText: 2024 Plykiya <58439124+Plykiya@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Rank #1 Jonestown partygoer <mary@thughunt.ing>
+// SPDX-FileCopyrightText: 2024 Rouge2t7 <81053047+Sarahon@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Truoizys <153248924+Truoizys@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 TsjipTsjip <19798667+TsjipTsjip@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Ubaser <134914314+UbaserB@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Vasilis <vasilis@pikachu.systems>
+// SPDX-FileCopyrightText: 2024 beck-thompson <107373427+beck-thompson@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 osjarw <62134478+osjarw@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 plykiya <plykiya@protonmail.com>
+// SPDX-FileCopyrightText: 2024 Арт <123451459+JustArt1m@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 RadsammyT <radsammyt@gmail.com>
+// SPDX-FileCopyrightText: 2025 SX-7 <sn1.test.preria.2002@gmail.com>
+// SPDX-FileCopyrightText: 2025 Tayrtahn <tayrtahn@gmail.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+using Content.Shared.Emoting;
+using Content.Shared.Hands;
+using Content.Shared.Interaction.Events;
+using Content.Shared.InteractionVerbs.Events;
+using Content.Shared.Item;
+using Content.Shared.Popups;
+using Content.Shared.UserInterface;
+using Robust.Shared.Serialization;
+
+namespace Content.Shared.Ghost
+{
+    /// <summary>
+    /// System for the <see cref="GhostComponent"/>.
+    /// Prevents ghosts from interacting when <see cref="GhostComponent.CanGhostInteract"/> is false.
+    /// </summary>
+    public abstract class SharedGhostSystem : EntitySystem
+    {
+        [Dependency] protected readonly SharedPopupSystem Popup = default!;
+
+        public override void Initialize()
+        {
+            base.Initialize();
+            SubscribeLocalEvent<GhostComponent, UseAttemptEvent>(OnAttempt);
+            SubscribeLocalEvent<GhostComponent, InteractionAttemptEvent>(OnAttemptInteract);
+            SubscribeLocalEvent<GhostComponent, EmoteAttemptEvent>(OnAttempt);
+            SubscribeLocalEvent<GhostComponent, DropAttemptEvent>(OnAttempt);
+            SubscribeLocalEvent<GhostComponent, PickupAttemptEvent>(OnAttempt);
+            // EE Interaction Verb Begin
+            SubscribeLocalEvent<GhostComponent, InteractionVerbAttemptEvent>(OnAttempt);
+            // End
+        }
+
+        private void OnAttemptInteract(Entity<GhostComponent> ent, ref InteractionAttemptEvent args)
+        {
+            // Orion-Edit-Start
+            if (ent.Comp.CanGhostInteract || HasComp<ActivatableUIComponent>(args.Target) && ent.Comp.CanGhostOpenUI) // CorvaxGoob-GhostUIViewing
+                return;
+
+            args.Cancelled = true;
+            // Orion-Edit-End
+        }
+
+        private void OnAttempt(EntityUid uid, GhostComponent component, CancellableEntityEventArgs args)
+        {
+            if (!component.CanGhostInteract)
+                args.Cancel();
+        }
+
+        /// <summary>
+        /// Sets the ghost's time of death.
+        /// </summary>
+        public void SetTimeOfDeath(Entity<GhostComponent?> entity, TimeSpan value)
+        {
+            if (!Resolve(entity, ref entity.Comp))
+                return;
+
+            if (entity.Comp.TimeOfDeath == value)
+                return;
+
+            entity.Comp.TimeOfDeath = value;
+            Dirty(entity);
+        }
+
+        [Obsolete("Use the Entity<GhostComponent?> overload")]
+        public void SetTimeOfDeath(EntityUid uid, TimeSpan value, GhostComponent? component)
+        {
+            SetTimeOfDeath((uid, component), value);
+        }
+
+        /// <summary>
+        /// Sets whether or not the ghost player is allowed to return to their original body.
+        /// </summary>
+        public void SetCanReturnToBody(Entity<GhostComponent?> entity, bool value)
+        {
+            if (!Resolve(entity, ref entity.Comp))
+                return;
+
+            if (entity.Comp.CanReturnToBody == value)
+                return;
+
+            entity.Comp.CanReturnToBody = value;
+            Dirty(entity);
+        }
+
+        [Obsolete("Use the Entity<GhostComponent?> overload")]
+        public void SetCanReturnToBody(EntityUid uid, bool value, GhostComponent? component = null)
+        {
+            SetCanReturnToBody((uid, component), value);
+        }
+
+        [Obsolete("Use the Entity<GhostComponent?> overload")]
+        public void SetCanReturnToBody(GhostComponent component, bool value)
+        {
+            SetCanReturnToBody((component.Owner, component), value);
+        }
+
+
+        /// <summary>
+        /// Sets whether the ghost is allowed to interact with other entities.
+        /// </summary>
+        public void SetCanGhostInteract(Entity<GhostComponent?> entity, bool value)
+        {
+            if (!Resolve(entity, ref entity.Comp))
+                return;
+
+            if (entity.Comp.CanGhostInteract == value)
+                return;
+
+            entity.Comp.CanGhostInteract = value;
+            Dirty(entity);
+        }
+    }
+
+    /// <summary>
+    /// A client to server request to get places a ghost can warp to.
+    /// Response is sent via <see cref="GhostWarpsResponseEvent"/>
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostWarpsRequestEvent : EntityEventArgs
+    {
+    }
+
+     // Orion-Start
+     /// <summary>
+     /// An player body a ghost can warp to.
+     /// This is used as part of <see cref="GhostWarpsResponseEvent"/>
+     /// </summary>
+     [Serializable, NetSerializable]
+     public struct GhostWarpPlayer
+     {
+         public GhostWarpPlayer(NetEntity entity, string playerName, string playerJobName, string playerDepartmentID, bool isGhost, bool isLeft, bool isDead, bool isAlive)
+         {
+             Entity = entity;
+             Name = playerName;
+             JobName = playerJobName;
+             DepartmentID = playerDepartmentID;
+
+             IsGhost = isGhost;
+             IsLeft = isLeft;
+             IsDead = isDead;
+             IsAlive = isAlive;
+         }
+
+         /// <summary>
+         /// The entity representing the warp point.
+         /// This is passed back to the server in <see cref="GhostWarpToTargetRequestEvent"/>
+         /// </summary>
+         public NetEntity Entity { get; }
+
+         /// <summary>
+         /// The display player name to be surfaced in the ghost warps menu
+         /// </summary>
+         public string Name { get; }
+
+         /// <summary>
+         /// The display player job to be surfaced in the ghost warps menu
+         /// </summary>
+
+         public string JobName { get; }
+
+         /// <summary>
+         /// The display player department to be surfaced in the ghost warps menu
+         /// </summary>
+         public string DepartmentID { get; set; }
+
+         /// <summary>
+         /// Is player is ghost
+         /// </summary>
+         public bool IsGhost { get;  }
+
+         /// <summary>
+         /// Is player body alive
+         /// </summary>
+         public bool IsAlive { get;  }
+
+         /// <summary>
+         /// Is player body dead
+         /// </summary>
+         public bool IsDead { get;  }
+
+         /// <summary>
+         /// Is player left from body
+         /// </summary>
+         public bool IsLeft { get;  }
+     }
+
+     [Serializable, NetSerializable]
+     public struct GhostWarpGlobalAntagonist
+     {
+         public GhostWarpGlobalAntagonist(NetEntity entity, string playerName, string antagonistName, string antagonistDescription, string prototypeID)
+         {
+             Entity = entity;
+             Name = playerName;
+             AntagonistName = antagonistName;
+             AntagonistDescription = antagonistDescription;
+             PrototypeID = prototypeID;
+         }
+
+         /// <summary>
+         /// The entity representing the warp point.
+         /// This is passed back to the server in <see cref="GhostWarpToTargetRequestEvent"/>
+         /// </summary>
+         public NetEntity Entity { get; }
+
+         /// <summary>
+         /// The display player name to be surfaced in the ghost warps menu
+         /// </summary>
+         public string Name { get; }
+
+         /// <summary>
+         /// The display antagonist name to be surfaced in the ghost warps menu
+         /// </summary>
+         public string AntagonistName { get; }
+
+         /// <summary>
+         /// The display antagonist description to be surfaced in the ghost warps menu
+         /// </summary>
+         public string AntagonistDescription { get; }
+
+         /// <summary>
+         /// A antagonist prototype id
+         /// </summary>
+         public string PrototypeID { get; }
+
+     }
+    // Orion-End
+
+    /// <summary>
+    /// An individual place a ghost can warp to.
+    /// This is used as part of <see cref="GhostWarpsResponseEvent"/>
+    /// </summary>
+    [Serializable, NetSerializable]
+    public struct GhostWarpPlace // Orion-Edit: GhostWarp > GhostWarpPlace
+    {
+        // Orion-Edit-Start
+        public GhostWarpPlace(NetEntity entity, string name, string description)
+        {
+            Entity = entity;
+            Name = name;
+            Description = description;
+        }
+        // Orion-Edit-End
+
+        /// <summary>
+        /// The entity representing the warp point.
+        /// This is passed back to the server in <see cref="GhostWarpToTargetRequestEvent"/>
+        /// </summary>
+        public NetEntity Entity { get; }
+
+        /// <summary>
+        /// The display name to be surfaced in the ghost warps menu
+        /// </summary>
+        public string Name { get; } // Orion-Edit: DisplayName > Name
+
+        /// <summary>
+        /// Display name to be surfaced in the ghost warps menu
+        /// </summary>
+        public string Description { get;  } // Orion-Edit: IsWarpPoint > Description
+    }
+
+    /// <summary>
+    /// A server to client response for a <see cref="GhostWarpsRequestEvent"/>.
+    /// Contains players, and locations a ghost can warp to
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostWarpsResponseEvent : EntityEventArgs
+    {
+/* // Orion-Edit: Removed
+        public GhostWarpsResponseEvent(List<GhostWarp> warps)
+        {
+            Warps = warps;
+        }
+
+        /// <summary>
+        /// A list of warp points.
+        /// </summary>
+        public List<GhostWarp> Warps { get; }
+*/
+
+        // Orion-Start
+        public GhostWarpsResponseEvent(List<GhostWarpPlayer> players, List<GhostWarpPlace> places, List<GhostWarpGlobalAntagonist> antagonists)
+        {
+            Players = players;
+            Places = places;
+            Antagonists = antagonists;
+        }
+
+        /// <summary>
+        /// A list of players to teleport.
+        /// </summary>
+        public List<GhostWarpPlayer> Players { get; }
+
+        /// <summary>
+        /// A list of warp points.
+        /// </summary>
+        public List<GhostWarpPlace> Places { get; }
+
+        /// <summary>
+        /// A list of antagonists to teleport.
+        /// </summary>
+        public List<GhostWarpGlobalAntagonist> Antagonists { get; }
+        // Orion-End
+    }
+
+    /// <summary>
+    ///  A client to server request for their ghost to be warped to an entity
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostWarpToTargetRequestEvent : EntityEventArgs
+    {
+        public NetEntity Target { get; }
+
+        public GhostWarpToTargetRequestEvent(NetEntity target)
+        {
+            Target = target;
+        }
+    }
+
+    /// <summary>
+    /// A client to server request for their ghost to be warped to the most followed entity.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostnadoRequestEvent : EntityEventArgs;
+
+    /// <summary>
+    /// A client to server request for their ghost to return to body
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostReturnToBodyRequest : EntityEventArgs
+    {
+    }
+
+    /// <summary>
+    /// A server to client update with the available ghost role count
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostUpdateGhostRoleCountEvent : EntityEventArgs
+    {
+        public int AvailableGhostRoles { get; }
+
+        public GhostUpdateGhostRoleCountEvent(int availableGhostRoleCount)
+        {
+            AvailableGhostRoles = availableGhostRoleCount;
+        }
+    }
+
+    // Orion-Start
+    [Serializable, NetSerializable]
+    public sealed class GhostReturnToRoundRequest : EntityEventArgs;
+    // Orion-End
+}

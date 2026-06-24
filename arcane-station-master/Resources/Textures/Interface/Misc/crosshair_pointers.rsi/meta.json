@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from CEV-Eris | Edited by PuroSlavKing (Github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "gun_sight"
+    },
+    {
+      "name": "gun_bolt_sight"
+    },
+    {
+      "name": "melee_sight"
+    }
+  ]
+}

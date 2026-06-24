@@ -1,0 +1,76 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from Skyrat | Edited by PuroSlavKing (Github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "borer"
+        },
+        {
+            "name": "host"
+        },
+        {
+            "name": "hide"
+        },
+        {
+            "name": "chemical"
+        },
+        {
+            "name": "level"
+        },
+        {
+            "name": "getfocus"
+        },
+        {
+            "name": "blood"
+        },
+        {
+            "name": "bloodchem"
+        },
+        {
+            "name": "bloodlevel"
+        },
+        {
+            "name": "fear"
+        },
+        {
+            "name": "willing"
+        },
+        {
+            "name": "speak",
+            "delays": [
+                [
+                    0.3,
+                    0.3,
+                    0.3,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "revive"
+        },
+        {
+            "name": "reproduce"
+        },
+        {
+            "name": "mendwound"
+        },
+        {
+            "name": "newability"
+        },
+        {
+            "name": "control"
+        },
+        {
+            "name": "borer_sugar"
+        },
+        {
+            "name": "borer_egg"
+        }
+    ]
+}

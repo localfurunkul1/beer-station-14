@@ -1,0 +1,30 @@
+﻿"Изменения: Спрайты":
+- changed-files:
+  - any-glob-to-any-file: '**/*.rsi/*.png'
+
+"Изменения: Локализация":
+- changed-files:
+  - any-glob-to-any-file: '**/*.ftl'
+
+"Изменения: Карты":
+- changed-files:
+  - any-glob-to-any-file:
+    - 'Resources/Maps/**/*.yml'
+    - 'Resources/Prototypes/Maps/**/*.yml'
+
+"Изменения: Интерфейс":
+- changed-files:
+  - any-glob-to-any-file: '**/*.xaml*'
+
+"Изменения: Шейдеры":
+- changed-files:
+  - any-glob-to-any-file: '**/*.swsl'
+
+"Изменения: Аудио":
+- changed-files:
+  - any-glob-to-any-file: '**/*.ogg'
+
+"Изменения: Нет C#":
+- changed-files:
+  # Equiv to any-glob-to-all as long as this has one matcher. If ALL changed files are not C# files, then apply label.
+  - all-globs-to-all-files: "!**/*.cs"

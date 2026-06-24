@@ -1,0 +1,64 @@
+<!--
+SPDX-FileCopyrightText: 2024 blobadoodle <lucahtaylor@gmail.com>
+SPDX-FileCopyrightText: 2024 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Ted Lukin <66275205+pheenty@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # КПБ
+  <GuideEntityEmbed Entity="MobIPCDummy" Caption="I.P.C."/>
+  An IPC (short for Integrated Positronic Chassis) is a type of sentient robot and is considered an [color=yellow]independent individual[/color], meaning [color=red]they are not guided by any laws of robotics[/color]. IPCs cannot be hacked by Emags because they do not have to follow any predefined directives in their system. [color=red]IPCs are silicon-based beings, so they are usually healed by Science or Engineering instead of Medical.[/color]
+  They take 20% less Brute damage, 70% more Heat damage and 100% more Shock damage. Contrary to cyborgs, they take Radiation damage, but 60% less than humans.
+  У них нету костей.
+
+  <Box>
+    <GuideEntityEmbed Entity="PositronicBrain" Caption="Позитронный мозг"/>
+  </Box>
+  Как и борги, КПБ имеют позитронный мозг в качестве вычислительного ядра. Однако, в отличие от них, КПБ нельзя собрать. «Проще создать оболочку, которая подчиняется, чем ту, что не подчиняется! *подмигивает*»
+
+  ## Подзарядка КПБ
+   <Box>
+    <GuideEntityEmbed Entity="APCBasic" Caption="ЛКП"/>
+    <GuideEntityEmbed Entity="BorgCharger" Caption="Зарядник для боргов"/>
+    <GuideEntityEmbed Entity="PowerCellMedium" Caption="Батарейки"/>
+  </Box>
+  КПБ можно подзарядить тремя способами:
+
+  ЛКП: КПБ могут использовать ЛКП для подзарядки. Нажмите [color=yellow]Alt + ЛКМ[/color] на терминале столько раз, сколько нужно для полной зарядки.
+
+  Станции зарядки боргов: КПБ могут заряжаться в зарядниках для боргов. Всегда отдавайте предпочтение тем, что находятся за пределами научного отдела, чтобы избежать лишних проблем.
+
+  Батарейки: КПБ могут поглащать энергию с батареек, что-бы пополнить свою энергию. [color=yellow]ПКМ и выбираете поглощение[/color] на батарейке, или устройстве что-бы начать поглащать энергию.
+
+  ## Встроенная рация
+  <Box>
+    <GuideEntityEmbed Entity="EncryptionKeyScience" Caption="Ключ шифрования"/>
+  </Box>
+
+  КПБ [bold]не[/bold] используют внешние рации, так как у них есть встроенная. Им нужно только установить ключ шифрования из рации. Кликнув по КПБ с помощью [color=yellow]кусачек[/color], можно извлечь их ключи.
+  Найти новые ключи можно по всей станции или извлечь из секторной рации с помощью [color=yellow]отвёртки[/color].
+
+  ## Ремонт
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="WelderIndustrialAdvanced" Caption="Сварка"/>
+    Сварка используется для ремонта [color=yellow]ушибов[/color].
+  </Box>
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="CableApcStack" Caption="Кабели (любые)"/>
+    Кабели используются для ремонта [color=yellow]ожогов[/color].
+  </Box>
+  <Box HorizontalAlignment="Stretch">
+    <GuideEntityEmbed Entity="SheetGlass" Caption="Стекло (любое)"/>
+    Стекло используется для ремонта [color=yellow]слепоты[/color].
+  </Box>
+  <Box HorizontalAlignment="Stretch">
+    Если КПБ погиб, после полного восстановления его необходимо перезапустить при помощи кнопки [color=yellow]"Перезагрузить"[/color] (вызывается ПКМ).
+  </Box>
+  <Box HorizontalAlignment="Stretch">
+    [color=red]НИКОГДА НЕ ЭЛЕКТРОШОКИРУЙТЕ КПБ дефибриллятором или иным способом, пока он мёртв, так как это вызовет разряд батареи с выбросом энергии наружу![/color]
+  </Box>
+
+</Document>

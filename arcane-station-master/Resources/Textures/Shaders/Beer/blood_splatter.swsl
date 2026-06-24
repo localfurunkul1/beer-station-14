@@ -1,0 +1,92 @@
+uniform sampler2D SCREEN_TEXTURE;
+uniform highp float Intensity;
+uniform highp vec4 Spot1;
+uniform highp vec4 Spot2;
+uniform highp vec4 Spot3;
+uniform highp vec4 Spot4;
+
+highp float hash21(highp vec2 p) {
+    p = fract(p * vec2(91.71, 47.39));
+    p += dot(p, p + 19.61);
+    return fract(p.x * p.y);
+}
+
+highp float noise(highp vec2 p) {
+    highp vec2 i = floor(p);
+    highp vec2 f = fract(p);
+    highp float a = hash21(i);
+    highp float b = hash21(i + vec2(1.0, 0.0));
+    highp float c = hash21(i + vec2(0.0, 1.0));
+    highp float d = hash21(i + vec2(1.0, 1.0));
+    highp vec2 u = f * f * (3.0 - 2.0 * f);
+    return mix(mix(a, b, u.x), mix(c, d, u.x), u.y);
+}
+
+highp float fbm(highp vec2 p) {
+    highp float v = 0.0;
+    highp float a = 0.5;
+    for (int i = 0; i < 4; i++) {
+        v += a * noise(p);
+        p *= 2.07;
+        a *= 0.5;
+    }
+    return v;
+}
+
+highp float splatter(highp vec2 uv, highp vec4 s) {
+    if (s.z < 0.0001) return 0.0;
+    highp vec2 d = uv - s.xy;
+    highp float r = length(d);
+    if (r > s.z * 3.5) return 0.0;
+
+    highp float seed = s.x * 13.0 + s.y * 7.0;
+    highp vec2 nuv = d / max(s.z, 0.001);
+    highp float edge = fbm(nuv * 4.5 + vec2(seed, 0.0)) - 0.5;
+
+    highp float mainR = s.z * (0.85 + edge * 0.30);
+    highp float main = 1.0 - smoothstep(mainR * 0.55, mainR, r);
+
+    highp float dropletMask = 0.0;
+    for (int i = 0; i < 5; i++) {
+        highp float fi = float(i);
+        highp float ang = hash21(vec2(seed + fi, fi * 1.7)) * 6.2831;
+        highp float dist = s.z * (1.1 + hash21(vec2(seed + fi * 3.1, 2.0)) * 1.4);
+        highp vec2 off = vec2(cos(ang), sin(ang)) * dist;
+        highp float dropR = s.z * (0.15 + hash21(vec2(seed + fi, 5.0)) * 0.22);
+        highp float dd = length(d - off);
+        dropletMask = max(dropletMask, 1.0 - smoothstep(dropR * 0.4, dropR, dd));
+    }
+
+    highp float trail = exp(-pow(d.x / max(s.z, 0.001) * 4.0, 2.0))
+                       * smoothstep(0.0, s.z * 1.6, -d.y)
+                       * (0.18 + edge * 0.20);
+
+    highp float strands = 0.0;
+    for (int i = 0; i < 3; i++) {
+        highp float fi = float(i);
+        highp float ang = hash21(vec2(seed + fi * 11.0, 9.0)) * 6.2831;
+        highp vec2 dir = vec2(cos(ang), sin(ang));
+        highp float t = clamp(dot(d, dir) / max(s.z * 1.6, 0.001), 0.0, 1.0);
+        highp vec2 closest = dir * t * s.z * 1.6;
+        highp float dperp = length(d - closest);
+        highp float strandR = s.z * 0.08 * (1.0 - t);
+        strands = max(strands, (1.0 - smoothstep(strandR * 0.5, strandR, dperp)) * (1.0 - t));
+    }
+
+    return clamp(max(max(main, dropletMask * 0.85), max(trail * s.w, strands * 0.7)), 0.0, 1.0);
+}
+
+void fragment() {
+    highp vec4 col = zTextureSpec(SCREEN_TEXTURE, UV);
+    highp float m = 0.0;
+    m = max(m, splatter(UV, Spot1));
+    m = max(m, splatter(UV, Spot2));
+    m = max(m, splatter(UV, Spot3));
+    m = max(m, splatter(UV, Spot4));
+    m *= Intensity;
+
+    highp vec3 blood = vec3(0.18, 0.025, 0.025);
+    highp vec3 outRgb = mix(col.rgb, blood, m * 0.62);
+    outRgb *= mix(1.0, 0.62, m * 0.55);
+    COLOR = vec4(outRgb, col.a);
+}

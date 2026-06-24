@@ -1,0 +1,54 @@
+# SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+# SPDX-FileCopyrightText: 2025 Marty <martynashagriefer@gmail.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# PORTED FROM FLOOFSTATION
+# Vox language
+- type: language
+  id: NewKinPidgin
+  isVisibleLanguage: true
+  speech:
+    color: "#a489a0"
+    fontId: FestusCorrect # Orion-Edit
+    boldFontId: FestusCorrect # Orion
+    fontSize: 12
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: vox
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 4
+    # Orion-Edit-Start: Localization
+    replacement:
+    - ка
+    - ра
+    - ма
+    - са
+    - на
+    - та
+    - ла
+    - ша
+    - ти
+    - хи
+    - ки
+    - я
+    - та
+    - ха
+    - ка
+    - йа
+    - чи
+    - ча
+    - ках
+    - кхре
+    - ахк
+    - ек
+    - равк
+    - краа
+    - ии
+    - кри
+    - ка
+    # Orion-Edit-End: Localization

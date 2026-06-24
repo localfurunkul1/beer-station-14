@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from TauCetiStation | Edited by PuroSlavKing (Github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "nymph",
+      "directions": 4
+    },
+    {
+      "name": "nymph_dead"
+    },
+    {
+      "name": "nymph_sleep",
+      "directions": 4
+    },
+    {
+      "name": "icon"
+    }
+  ]
+}

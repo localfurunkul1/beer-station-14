@@ -1,0 +1,38 @@
+- type: entity
+  parent: BaseWeaponBallisticTurret
+  id: WeaponTurretInteQ
+  suffix: InteQ
+  components:
+  - type: NpcFactionMember
+    factions:
+    - InteQHostile
+  - type: BallisticAmmoProvider
+    capacity: 1500 # Was 500
+  # Arcane-start
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 6000
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+    - trigger:
+        !type:DamageTrigger
+        damage: 3000
+       # TODO: Construction graph
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 3
+            max: 5
+  # Arcane-end

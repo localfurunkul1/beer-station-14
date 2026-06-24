@@ -1,0 +1,295 @@
+# Languages spoken by various animals and critters.
+- type: language
+  id: Cat
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
+    replacement:
+    - murr
+    - meow
+    - purr
+    - mrow
+
+- type: language
+  id: Dog
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
+    replacement:
+    - woof
+    - bark
+    - ruff
+    - bork
+    - raff
+    - garr
+
+- type: language
+  id: Fox
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
+    replacement:
+    - ruff
+    - raff
+    - garr
+    - yip
+    - yap
+    - myah
+
+- type: language
+  id: Xeno
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: xeno
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 8 # I was crazy once
+    replacement:
+    - s
+    - S
+
+- type: language
+  id: Monkey
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 8 # They locked me in a room...
+    replacement:
+    - o
+    - k
+
+- type: language
+  id: Mouse
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: cheese
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 3
+    replacement:
+    - squ
+    - eak
+    - pi
+    - ep
+    - chuu
+    - ee
+    - fwi
+    - he
+
+- type: language
+  id: Chicken
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - co
+    - coo
+    - ot
+
+- type: language
+  id: Duck
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - qu
+    - ack
+    - quack
+
+- type: language
+  id: Cow
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - moo
+    - mooo
+
+- type: language
+  id: Sheep
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - ba
+    - baa
+    - aa
+
+- type: language
+  id: Kangaroo
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - shre
+    - ack
+    - chuu
+    - choo
+
+- type: language
+  id: Pig
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - oink # Please someone come up with something better
+
+- type: language
+  id: Crab
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - click
+    - clack
+    - ti
+    - pi
+    - tap
+    - cli
+    - ick
+
+- type: language
+  id: Kobold
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: lizard
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
+    replacement:
+    - yip
+    - yap
+    - gar
+    - grr
+    - ar
+    - scre
+    - et
+    - gronk
+    - hiss
+    - ss
+    - ee
+
+- type: language
+  id: Hissing
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 4
+    replacement:
+    - hss
+    - iss
+    - ss
+    - is
+
+- type: language
+  id: Penguin
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 2
+    maxSyllables: 3
+    replacement: # I'm out of ideas
+    - pen
+    - peng
+    - won
+    - wonk
+    - wong
+
+- type: language # Goobstation - For Deer
+  id: Deer
+  # Orion-Start
+  icon:
+    sprite: _Orion/Interface/Chat/language.rsi
+    state: animal
+  # Orion-End
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - neigh
+    - ni
+    - brr

@@ -1,0 +1,17 @@
+{
+    "version": 1,
+
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Sprited by SmArtKar and taken from https://github.com/tgstation/tgstation/commit/02b57cf750ab12314f915584e17449ae5f8219ba.",
+
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "timer",
+            "directions": 1
+        }
+    ]
+}

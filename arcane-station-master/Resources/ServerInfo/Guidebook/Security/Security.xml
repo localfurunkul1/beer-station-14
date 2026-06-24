@@ -1,0 +1,56 @@
+<!--
+SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 Myakot <30875116+Myakot@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 TurboTrackerss14 <130304754+TurboTrackerss14@users.noreply.github.com>
+SPDX-FileCopyrightText: 2023 faint <46868845+ficcialfaint@users.noreply.github.com>
+SPDX-FileCopyrightText: 2024 UBlueberry <161545003+UBlueberry@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+SPDX-FileCopyrightText: 2025 Ilya246 <57039557+Ilya246@users.noreply.github.com>
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+
+<Document>
+  # Служба безопасности
+  Обеспечение безопасности станции и экипажа является задачей номер один для Службы безопасности. Независимо от того, кто это - агенты Синдиката, Ядерные оперативники, инфицированные, или просто буйные сотрудники. Служба безопасности готова поддерживать порядок и контролировать толпу.
+
+  ## Персонал
+  [color=#cb0000]Служба безопасности[/color] состоит из Кадетов Службы безопасности, Офицеров Службы безопасности и Детектива. Руководят [color=#cb0000]Службой безопасности[/color] Смотритель и Глава Службы безопасности.
+  <Box>
+    <GuideEntityEmbed Entity="ToyFigurineSecurity" Caption="Офицер СБ"/>
+    <GuideEntityEmbed Entity="ToyFigurineDetective" Caption="Детектив"/>
+    <GuideEntityEmbed Entity="ToyFigurineWarden" Caption="Смотритель"/>
+    <GuideEntityEmbed Entity="ToyFigurineHeadOfSecurity" Caption="ГСБ"/>
+  </Box>
+
+  ## Gear
+  Во-первых, у нас есть нелетальные средства, которые стоят на ступеньку выше простого указания кому-либо следовать инструкциям. В том числе дубинка-шокер способная ограничить передвижение нападающего, в то время как наручники могут быть применены для того, чтобы лишить преступника свободы передвижения и доступа к своим рукам.
+
+  Дубинка-шокер действует по-разному в зависимости от типа атаки. При легкой атаке ([color=yellow]ЛКМ[/color]) она наносит 60 единиц урона по выносливости и сбивает цель с ног на 4 секунды после 2-секундной задержки, эти значения могут отличаться или полностью отменены броней и стимуляторами. Легкие атаки задерживаются на 2,5 секунды и потребляют в два раза больше энергии аккумулятора. Тяжелые атаки ([color=yellow]ПКМ[/color]) наносят 15 единиц немедленного урона от выносливости и 40 единиц сверхурочного урона от выносливости, которые снижают критику цели после 2 ударов, когда сверхурочное повреждение выносливостью достигает порогового значения стаминакрит (100 единиц урона по выносливости для большинства видов). Слабый критический удар по выносливости по-прежнему позволяет цели ползти, но любой немедленный урон по выносливости наносит урон по выносливости, что позволяет надеть на нее наручники. Чтобы оглушить свою цель с помощью тяжелой парализующей атаки, вам нужно либо ударить ее дважды, затем подождать некоторое время, пока она не будет сбита с ног, и ударить еще раз, чтобы полностью парализовать ее, либо ударить четыре раза подряд.
+  <Box>
+    <GuideEntityEmbed Entity="Stunbaton"/>
+    <GuideEntityEmbed Entity="Handcuffs"/>
+    <GuideEntityEmbed Entity="WeaponDisabler"/>
+  </Box>
+
+  ## Вспышки
+  Вспышки являются эффективным средством для разгона толпы и задержания особо ловких целей, при этом большая площадь воздействия ослепит всех, кто не имеет соответствующей защиты.
+  Стоит отметить, что вспышки можно использовать как на большом расстоянии (горячая клавиша [color=yellow]Z[/color]), так и при атаке кого-либо при активном [color=red]режиме вреда[/color]. Важно отметить, что локальные вспышки оглушают в [color=yellow]2,5[/color] раза дольше, чем вспышки на большой площади.
+  Служба безопасности и [color=#a4885c]некоторые[/color] другие сотрудники имеют средства защиты глаз от вспышек и светошумовых гранат.
+  <Box>
+    <GuideEntityEmbed Entity="Flash"/>
+    <GuideEntityEmbed Entity="ClothingEyesGlassesSecurity"/>
+    <GuideEntityEmbed Entity="GrenadeFlashBang"/>
+  </Box>
+
+  ## Летальные боеприпасы
+  Если того потребует ситуация, служба безопасности имеет доступ к лазерным винтовкам, дробовикам, пистолетам и автоматам, способным вести огонь на поражение по любому, кто решит выступить против станции.
+  <Box>
+    <GuideEntityEmbed Entity="WeaponLaserCarbine"/>
+    <GuideEntityEmbed Entity="WeaponShotgunKammerer"/>
+    <GuideEntityEmbed Entity="WeaponPistolMk58"/>
+    <GuideEntityEmbed Entity="WeaponRifleLecter"/>
+  </Box>
+
+</Document>

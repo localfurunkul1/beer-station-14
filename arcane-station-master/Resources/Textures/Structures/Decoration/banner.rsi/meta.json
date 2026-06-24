@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from https://github.com/tgstation/tgstation/commit/183faac0a27f65527907b53839774668e8e5289c | Edited by PuroSlavKing (Github)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "banner"
+    },
+    {
+      "name": "banner-red"
+    },
+    {
+      "name": "banner-blue"
+    },
+    {
+      "name": "banner-yellow"
+    },
+    {
+      "name": "banner-green"
+    },
+    {
+      "name": "banner_engineering"
+    },
+    {
+      "name": "banner_medical"
+    },
+    {
+      "name": "banner_science"
+    },
+    {
+      "name": "banner_cargo"
+    },
+    {
+      "name": "banner_security"
+    },
+    {
+      "name": "banner_revolution"
+    },
+    {
+      "name": "banner_syndicate"
+    }
+  ]
+}
